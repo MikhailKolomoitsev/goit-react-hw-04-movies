@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import HomeView from "./views/HomeView";
 import NotFound from "./views/NotFound";
 import MoviesView from "./views/MoviesView";
+import MoviePage from "./views/MoviePage";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,10 @@ function App() {
 
           <Route path="/movies" exact>
             <MoviesView></MoviesView>
+          </Route>
+
+          <Route path="/movies/:movieId" exact>
+            <MoviePage></MoviePage>
           </Route>
 
           <Route>
