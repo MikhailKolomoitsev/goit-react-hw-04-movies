@@ -1,0 +1,14 @@
+ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: -10px;
+}
+li {
+  width: calc((100% - 7 * 20px) / 7);
+  margin: 10px;
+}
+img {
+  width: 100%;
+}
