@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import { Route } from "react-router-dom";
 import { useEffect, useState } from 'react'
 import { FetchMovieById } from '../servicies/FetchApi'
 
@@ -14,7 +15,15 @@ export default function MoviePage() {
         alt=""
     />
         <h3 className="">{movie.title}</h3>
-        <p>{movie.overview}</p></div>
+        <p><span className='bold'>Genre:</span> {movie.genres[0].name}</p>
+        <p><span className='bold'>Overview:</span> {movie.overview}</p>
+
+        <Route path="/movies/:movieId/cast" exact>
+
+        </Route>
+
+
+    </div>
     }</>
 
     )
