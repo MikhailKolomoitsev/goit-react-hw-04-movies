@@ -1,4 +1,4 @@
-import styles from './Films.module.css'
+import styles from './FilmsRender.module.css'
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -21,7 +21,7 @@ export default function Films({ list, location }) {
                                     src={`https://image.tmdb.org/t/p/w342/${film.poster_path}`}
                                     alt=""
                                 />
-                                <p className="">{film.title}</p>
+                                <h2 className="">{film.title}</h2>
                             </Link>
                         </li>
                     )

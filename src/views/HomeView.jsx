@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import Films from '../components/Films/Films'
+import Films from '../components/FilmsRender/FilmsRender'
 import { FetchTrending } from '../servicies/FetchApi'
 
 

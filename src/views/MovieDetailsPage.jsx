@@ -8,12 +8,13 @@ export default function MoviePage() {
     useEffect(() => {
         FetchMovieById(movieId, setMovie)
     }, [movieId])
-    return (<>{movie && <div>  <img
-        className=""
+    return (<>{movie && <div className='movie-card'>  <img
+        className="movie-image"
         src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
         alt=""
     />
-        <p className="">{movie.title}</p></div>
+        <h3 className="">{movie.title}</h3>
+        <p>{movie.overview}</p></div>
     }</>
 
     )
