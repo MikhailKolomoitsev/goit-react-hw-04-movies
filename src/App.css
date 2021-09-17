@@ -38,7 +38,7 @@
 }
 
 .movie-image {
-  max-width: 400px;
+  max-width: 200px;
 }
 
 .movie-card {
@@ -47,4 +47,10 @@
 
 .bold {
   font-weight: 700;
+}
+.add_link {
+  color: #282c34;
+}
+.active_link {
+  color: #f4190d;
 }

@@ -42,3 +42,12 @@ export function FetchMovieReviews(id, callback) {
         .then(callback)
         .catch(error => error.message)
 }
+
+export function FetchMovieCast(id, callback) {
+    const url = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${key}&language=en-US`
+    axios
+        .get(url)
+        .then((res) => res.data.cast)
+        .then(callback)
+        .catch((error) => error.message);
+}

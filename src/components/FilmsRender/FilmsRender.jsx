@@ -2,7 +2,7 @@ import styles from './FilmsRender.module.css'
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export default function Films({ list, location }) {
+export default function FilmsRender({ list, location }) {
     return (
         <>
             <h2>Trending films</h2>
@@ -31,7 +31,7 @@ export default function Films({ list, location }) {
     )
 }
 
-Films.propTypes = {
+FilmsRender.propTypes = {
     list: PropTypes.object,
     location: PropTypes.object,
 }

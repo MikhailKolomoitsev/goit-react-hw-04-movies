@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
+import Loader from "react-loader-spinner";
 import { useLocation } from 'react-router-dom'
-import Films from '../components/FilmsRender/FilmsRender'
 import { FetchTrending } from '../servicies/FetchApi'
+import React, { Suspense, lazy } from "react";
 
+const FilmsRender = lazy(() => import('../components/FilmsRender/FilmsRender'))
 
 export default function HomeView() {
     const location = useLocation();
@@ -12,6 +14,9 @@ export default function HomeView() {
     }, []);
 
     return (
-        <>{movies && <Films list={movies} location={location}></Films>}</>
+        <Suspense fallback={Loader}>
+            {movies && <FilmsRender list={movies} location={location}></FilmsRender>}
+        </Suspense>
+
     )
 }
