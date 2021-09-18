@@ -44,7 +44,7 @@ export function FetchMovieReviews(id, callback) {
 }
 
 export function FetchMovieCast(id, callback) {
-    const url = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${key}&language=en-US`
+    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}&language=en-US`
     axios
         .get(url)
         .then((res) => res.data.cast)

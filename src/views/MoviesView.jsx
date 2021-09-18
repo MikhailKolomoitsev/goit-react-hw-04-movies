@@ -6,10 +6,25 @@ import Form from "../components/form/Form";
 
 export default function MoviesView() {
     const location = useLocation()
+    const url = new URLSearchParams(location.search).get("query");
+    const history = useHistory();
     const [foundMovies, setFoundMovies] = useState(null)
+    const [query, setQuery] = useState(url ?? "");
+
+    const getQuery = (query) => {
+        history.push({ ...location, search: `query=${query}` });
+        setQuery(query);
+    }
+
+    useEffect(() => {
+        if (query === "" && url === null) return;
+        FetchMovies(query, setFoundMovies);
+    }, [query, url]);
+
+
     return (
         <>
-            <Form onSubmit={FetchMovies}></Form>
+            <Form onSubmit={getQuery}></Form>
             {foundMovies && <FilmsRender list={foundMovies} location={location} />}
         </>
     )
