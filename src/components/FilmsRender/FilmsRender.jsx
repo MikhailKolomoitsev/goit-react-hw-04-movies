@@ -9,7 +9,7 @@ export default function FilmsRender({ list, location }) {
             <ul className=''>
                 {list.map(film => {
                     return (
-                        <li>
+                        <li key={film.id}>
                             <Link
                                 to={{
                                     pathname: `/movies/${film.id}`,
@@ -32,6 +32,6 @@ export default function FilmsRender({ list, location }) {
 }
 
 FilmsRender.propTypes = {
-    list: PropTypes.object,
+    list: PropTypes.array,
     location: PropTypes.object,
 }

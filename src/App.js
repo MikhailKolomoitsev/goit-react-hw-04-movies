@@ -27,15 +27,15 @@ function App() {
         <Suspense fallback={<Loader />}>
           <Switch>
             <Route path="/" exact>
-              <HomeView></HomeView>
+              <HomeView />
             </Route>
 
             <Route path="/movies" exact>
-              <MoviesView></MoviesView>
+              <MoviesView />
             </Route>
 
             <Route path="/movies/:movieId" exact>
-              <MovieDetailsView></MovieDetailsView>
+              <MovieDetailsView />
             </Route>
 
             <Route>
