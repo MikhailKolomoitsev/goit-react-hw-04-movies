@@ -1,7 +1,7 @@
-import { useParams, useLocation, useRouteMatch, useHistory } from 'react-router-dom'
+import { useParams, useLocation, useRouteMatch, useHistory, Switch } from 'react-router-dom'
 import Loader from 'react-loader-spinner';
 import { Route } from "react-router-dom";
-import { useEffect, useState, Suspense, lazy } from 'react'
+import { useEffect, useState, lazy } from 'react'
 import { FetchMovieById } from '../servicies/FetchApi'
 import CastReviews from '../components/CastReviews/CastReviews';
 
@@ -31,12 +31,10 @@ export default function MovieDetailsView() {
     </div>
     }
         <CastReviews url={url} location={location} />
-        <Suspense fallback={<Loader />}>
-            <Route path="/movies/:movieId/cast" component={<Cast />}>
-            </Route>
-            <Route path="/movies/:movieId/reviews " component={<Reviews />}>
-            </Route>
-        </Suspense></>
-
+        <Switch>
+            <Route path="/movies/:movieId/cast" component={Cast} />
+            <Route path="/movies/:movieId/reviews " component={Reviews} />
+        </Switch>
+    </>
     )
 }
