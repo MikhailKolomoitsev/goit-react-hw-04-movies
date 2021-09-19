@@ -5,8 +5,8 @@ import { useEffect, useState, lazy } from 'react'
 import { FetchMovieById } from '../servicies/FetchApi'
 import CastReviews from '../components/CastReviews/CastReviews';
 
-const Cast = lazy(() => import("../components/Cast/Cast"));
-const Reviews = lazy(() => import("../components/Reviews/Reviews"));
+const Cast = lazy(() => import("../components/Cast/Cast" /* webpackChunkName: "Cast" */));
+const Reviews = lazy(() => import("../components/Reviews/Reviews" /* webpackChunkName: "Reviews" */));
 
 export default function MovieDetailsView() {
     const { movieId } = useParams()
