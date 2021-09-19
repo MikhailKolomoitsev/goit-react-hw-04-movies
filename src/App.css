@@ -54,3 +54,14 @@
 .active_link {
   color: #f4190d;
 }
+
+.reviews-item {
+  width: 728px;
+}
+
+.reviewContent {
+  text-align: justify;
+}
+.author {
+  color: coral;
+}

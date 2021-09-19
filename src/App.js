@@ -23,26 +23,27 @@ function App() {
     <div className="App">
       <Container>
         <Navigation />
+
+        <Suspense fallback={Loader}>
+          <Switch>
+            <Route path="/" exact>
+              <HomeView />
+            </Route>
+
+            <Route path="/movies" exact>
+              <MoviesView />
+            </Route>
+
+            <Route path="/movies/:movieId">
+              <MovieDetailsView />
+            </Route>
+
+            <Route>
+              <NotFound />
+            </Route>
+          </Switch>
+        </Suspense>
       </Container>
-      <Suspense fallback={Loader}>
-        <Switch>
-          <Route path="/" exact>
-            <HomeView />
-          </Route>
-
-          <Route path="/movies" exact>
-            <MoviesView />
-          </Route>
-
-          <Route path="/movies/:movieId">
-            <MovieDetailsView />
-          </Route>
-
-          <Route>
-            <NotFound />
-          </Route>
-        </Switch>
-      </Suspense>
     </div>
   );
 }
